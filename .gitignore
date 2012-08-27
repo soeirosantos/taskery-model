@@ -27,7 +27,6 @@ pip-log.txt
 .mr.developer.cfg
 
 #aptana artifacts
-.settings
+.settings/*
 .pydevproject
 .project
-*~
