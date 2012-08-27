@@ -6,6 +6,9 @@ import context
 from springpython.context import ApplicationContext
     
 class Test(unittest.TestCase):
+    """
+        These are integration tests for domain model
+    """
 
     def getService(self):
         applicationContext = ApplicationContext(context.TaskeryApplicationContext());
@@ -19,8 +22,9 @@ class Test(unittest.TestCase):
 
 
     def testListProjects(self):
-        for p in self.getService().listAllProjects():
-            print p.name
+        self.getService().createProject(newProject());
+        self.getService().createProject(newProject());
+        assert(self.getService().listAllProjects() >= 2)         
     
     def testGetProject(self):
         project = newProject()

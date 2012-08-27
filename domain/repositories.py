@@ -42,7 +42,7 @@ class AllWorkItems(BaseRepository):
         """
             add a work item and associate it to a specified project
         """
-        return 1 #self.insert("""
+        return 1 #TODO: self.insert("""
                   #          INSERT INTO 
                    #         work_items(name, description)
                     #        VALUES(%s, %s)
