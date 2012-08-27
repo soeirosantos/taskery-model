@@ -14,7 +14,7 @@ class TaskeryApplicationContext(PythonConfig):
         super(TaskeryApplicationContext, self).__init__()
 
     @Object(scope.PROTOTYPE)
-    def projectService(self):
+    def taskeryService(self):
         return TaskeryService(self.allProjects(), self.allWorkItems(), self.connectionFactory().getConnection());
     
     @Object(scope.PROTOTYPE)

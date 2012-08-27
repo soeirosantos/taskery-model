@@ -4,14 +4,12 @@ import unittest
 from domain.entities import Project, WorkItem
 import context
 from springpython.context import ApplicationContext
-import sys
-sys.path.append('/home/romulo/python/projects/taskery/taskery-model')
     
 class Test(unittest.TestCase):
 
     def getService(self):
         applicationContext = ApplicationContext(context.TaskeryApplicationContext());
-        return applicationContext.get_object("projectService")
+        return applicationContext.get_object("taskeryService")
     
     def testShouldCreateAProject(self):
         project = newProject()
