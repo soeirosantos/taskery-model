@@ -33,14 +33,14 @@ class Project(Entity):
         return len(self.items)
     
 class WorkItem(Entity):
-    def __init__(self, id=None, project=None, name=None, importance=None, estimative=None, testCase=None, notes=None, referece=None, status=None, requester=None, type=None):
+    def __init__(self, id=None, project=None, name=None, importance=None, estimative=None, testCase=None, notes=None, reference=None, status=None, requester=None, type=None):
         Entity.__init__(self, id)
         self.name = name
         self.importance = importance
         self.estimative = estimative
         self.testCase = testCase
         self.notes = notes
-        self.reference = referece
+        self.reference = reference
         self.requester=requester
         self.status = status    # [not yet started, started, and finished]
         self.type = type        #[Feature, Task, Bug]

@@ -20,7 +20,6 @@ class Test(unittest.TestCase):
         id = self.getService().createProject(project);
         assert(id > 0);
 
-
     def testListProjects(self):
         self.getService().createProject(newProject());
         self.getService().createProject(newProject());
@@ -38,26 +37,21 @@ class Test(unittest.TestCase):
     def testShouldIncludeWorkItensInAProject(self):
         project = Project();
         self.assertEquals(project.totalItems(), 0, "there should be no item in the project"); 
-
         wi1 = WorkItem(project=project);
         project.addWorkItem(wi1);
-        
         wi2 = WorkItem(project=project);
         project.addWorkItem(wi2);
-        
         wi3 = WorkItem(project=project);
         project.addWorkItem(wi3);
-
         wi4 = WorkItem(project=project);
         project.addWorkItem(wi4);
-        
         self.assertEquals(project.totalItems(), 4, "there should be 4 items in project"); 
 
     def testWorkItemShowldBeValid(self):
         pass
     
     def testShouldAddAWorkItem(self):
-        wi = WorkItem
+        wi = WorkItem()
         id = self.getService().addWorkItem(wi, newProject())
         assert(id > 0);
         

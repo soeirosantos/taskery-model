@@ -42,8 +42,15 @@ class AllWorkItems(BaseRepository):
         """
             add a work item and associate it to a specified project
         """
-        return 1 #TODO: self.insert("""
-                  #          INSERT INTO 
-                   #         work_items(name, description)
-                    #        VALUES(%s, %s)
-                     #      """, ("",))
+        return self.insert("""
+                            INSERT INTO 
+                            work_items(project_id, name, importance, 
+                                       estimative, test_case, notes, 
+                                       reference, status_cod, requester_id,
+                                        type_cod)
+                            VALUES(%s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
+                           """, (projectId, workItem.name, workItem.importance, 
+                                 workItem.estimative, workItem.testCase,
+                                  workItem.notes, workItem.reference, 
+                                  2, 2, 
+                                  2))
